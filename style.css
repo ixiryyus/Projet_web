@@ -59,12 +59,12 @@ input[type=text]{
     width: 2em;
     display: flex;
     flex-direction: column;
-    border-right: 1px dashed black;
+    border-right: 1px dashed white;
 }
 
 .container-arrow{
     margin-top: 3.3em;
-    margin-bottom: 4em;
+    margin-bottom: 4.2em;
 }
 
 .container-arrow.two{
@@ -73,13 +73,13 @@ input[type=text]{
 }
 
 .container-arrow.three{
-    margin-top: 5em;
-    margin-bottom: 6em;
+    margin-top: 86px;
+    margin-bottom: 93px;
 }
 
 .container-arrow.four{
-    margin-top: 11.3em;
-    margin-bottom: 12em;
+    margin-top: 185px;
+    margin-bottom: 195px;
 }
 
 .container-arrow.five{
@@ -88,58 +88,58 @@ input[type=text]{
 }
 
 .group{
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
-.group.two{
+    margin-bottom: 25px;
+    margin-top: 34px;
 }
 
 .group-container-player{
     background-color: #3A3A3A;
     color: white;
-    padding: 1px;
+    padding: 5px;
+    height: 27px;
     border: 2px solid grey;
-    margin-bottom: 1em;
+    margin-bottom: 1.6em;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
 }
 
 .group-container-player.active{
     -webkit-box-shadow: 0px 0px 10px 1px rgba(255,221,0,1);
     -moz-box-shadow: 0px 0px 10px 1px rgba(255,221,0,1);
     box-shadow: 0px 0px 10px 1px rgba(255,221,0,1);
+    transition: 0.3s box-shadow;
+    transition: 1s height;
+    height: 500px;
 }
 
-
-
-
 .round_two.one{
-    margin-bottom: 10.8em;
-    margin-top: 2em;
+    margin-bottom: 195px;
+    margin-top: 30px;
 }
 
 .round_two.two{
-    margin-bottom: 3em;
-    margin-top: -2em;
+    margin-bottom: 55px;
+    margin-top: -40px;
 }
 
 .round_three.one{
-    margin-bottom: 22.5em;
-    margin-top: 7.7em;
+    margin-bottom: 335px;
+    margin-top: 122px;
 }
 
 .round_three.two{
-    margin-bottom: 9em;
-    margin-top: -2em;
+    margin-bottom: 160px;
+    margin-top: 258px;
 }
 
 .round_four.one{
-    margin-bottom: 46em;
-    margin-top: 7.7em;
+    margin-bottom: 500px;
+    margin-top: -20px;
 }
 
 .round_four.two{
-    margin-bottom: 9em;
-    margin-top: -2em;
+    margin-top: 715px;
 }
 
 .group-container-line_bottom__left, .group-container-line_bottom__right, .group-container-line_top__right, .group-container-line_top__left{
