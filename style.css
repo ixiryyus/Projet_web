@@ -99,9 +99,13 @@ input[type=text]{
     height: 27px;
     border: 2px solid grey;
     margin-bottom: 1.6em;
-    cursor: pointer;
     transition: 0.3s;
     overflow: hidden;
+}
+
+.group-container-player.win{
+    border: 2px solid green;
+    transition: 1s;
 }
 
 .group-container-player.active{
@@ -111,6 +115,22 @@ input[type=text]{
     transition: 0.3s box-shadow;
     transition: 1s height;
     height: 500px;
+}
+
+.btn{
+    float: right;
+    cursor: pointer;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: green;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.win{
+    border-color: green;
 }
 
 .round_two.one{
@@ -148,6 +168,10 @@ input[type=text]{
 
 .group-container-line_bottom__left.active, .group-container-line_bottom__right.active, .group-container-line_top__right.active, .group-container-line_top__left.active{
     border: 2px solid rgba(255,221,0,1);
+}
+
+.group-container-line_bottom__left.win, .group-container-line_bottom__right.win, .group-container-line_top__right.win, .group-container-line_top__left.win{
+    border: 2px solid green;
 }
 
 .group-container-line_top__right.three{
