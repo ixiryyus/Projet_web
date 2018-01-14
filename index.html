@@ -1,41 +1,275 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="indexstyle.css"/>
-    <title>home</title>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css"/>
 </head>
 <body>
-<div class="home_container">
+<div class="header">
 
-    <div class="title_container">
-        <h1>Tournament Tree</h1>
+</div>
+<div class="container">
+
+
+
+<!--
+    <div class="round one">
+        <div class="group" id="1">
+            <div id="player_1" class="group-container-player one round_one group_1">
+                <span class="username">Jean Michel</span>
+                <button class="btn one win group_1">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_2" class="group-container-player two round_one group_1">
+                <span class="username">Jean Bernard</span>
+                <button class="btn two win group_1">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="2">
+            <div id="player_3" class="group-container-player one round_one group_2">
+                <span class="username">username</span>
+                <button class="btn one win group_2">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_4" class="group-container-player two round_one group_2">
+                <span class="username">username</span>
+                <button class="btn two win group_2">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="3">
+            <div id="player_5" class="group-container-player one round_one group_3">
+                <span class="username">username</span>
+                <button class="btn one win group_3">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_6" class="group-container-player two round_one group_3">
+                <span class="username">username</span>
+                <button class="btn two win group_3">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="4">
+            <div id="player_7" class="group-container-player one round_one group_4">
+                <span class="username">username</span>
+                <button class="btn one win group_4">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_8" class="group-container-player two round_one group_4">
+                <span class="username">username</span>
+                <button class="btn two win group_4">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="5">
+            <div id="player_9" class="group-container-player one round_one group_5">
+                <span class="username">username</span>
+                <button class="btn one win group_5">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_10" class="group-container-player two round_one group_5">
+                <span class="username">username</span>
+                <button class="btn two win group_5">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="6">
+            <div id="player_11" class="group-container-player one round_one group_6">
+                <span class="username">username</span>
+                <button class="btn one win group_6">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_12" class="group-container-player two round_one group_6">
+                <span class="username">username</span>
+                <button class="btn two win group_6">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="7">
+            <div id="player_13" class="group-container-player one round_one group_7">
+                <span class="username">username</span>
+                <button class="btn one win group_7">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_14" class="group-container-player two round_one group_7">
+                <span class="username">username</span>
+                <button class="btn two win group_7">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
+        <div class="group" id="8">
+            <div id="player_15" class="group-container-player one round_one group_8">
+                <span class="username">username</span>
+                <button class="btn one win group_8">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+            <div id="player_16" class="group-container-player two round_one group_8">
+                <span class="username">username</span>
+                <button class="btn two win group_8">Winner</button>
+                <button class="btn more"><i class="fas fa-angle-down"></i></button>
+            </div>
+        </div>
     </div>
-    <div class="nbr-player_container">
-        <p>Please,enter the player's number.</p>
-        <input id="nbr_player" name="nbr-player" type="text" value="">
-        <a ><button type="submit" value="Play tournament" id="nbr_player_button">Enter</button></a>
+    <div class="arrow">
+        <div class="container-arrow">
+            <div id="arrow_1" class="group-container-line_top__left active"></div>
+            <div id="arrow_1" class="group-container-line_top__right active"></div>
+            <div id="arrow_1" class="group-container-line_bottom__right"></div>
+            <div id="arrow_1" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_2" class="group-container-line_top__left"></div>
+            <div id="arrow_2" class="group-container-line_top__right"></div>
+            <div id="arrow_2" class="group-container-line_bottom__right"></div>
+            <div id="arrow_2" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_3" class="group-container-line_top__left"></div>
+            <div id="arrow_3" class="group-container-line_top__right"></div>
+            <div id="arrow_3" class="group-container-line_bottom__right"></div>
+            <div id="arrow_3" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_4" class="group-container-line_top__left"></div>
+            <div id="arrow_4" class="group-container-line_top__right"></div>
+            <div id="arrow_4" class="group-container-line_bottom__right"></div>
+            <div id="arrow_4" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_5" class="group-container-line_top__left"></div>
+            <div id="arrow_5" class="group-container-line_top__right"></div>
+            <div id="arrow_5" class="group-container-line_bottom__right"></div>
+            <div id="arrow_5" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_6" class="group-container-line_top__left"></div>
+            <div id="arrow_6" class="group-container-line_top__right"></div>
+            <div id="arrow_6" class="group-container-line_bottom__right"></div>
+            <div id="arrow_6" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_7" class="group-container-line_top__left"></div>
+            <div id="arrow_7" class="group-container-line_top__right"></div>
+            <div id="arrow_7" class="group-container-line_bottom__right"></div>
+            <div id="arrow_7" class="group-container-line_bottom__left"></div>
+        </div>
+        <div class="container-arrow">
+            <div id="arrow_8" class="group-container-line_top__left"></div>
+            <div id="arrow_8" class="group-container-line_top__right"></div>
+            <div id="arrow_8" class="group-container-line_bottom__right"></div>
+            <div id="arrow_8" class="group-container-line_bottom__left"></div>
+        </div>
     </div>
-
-    <div class="taskcol">
-
-        <ul class="tasklist">
-        </ul>
-
+    <div class="round two">
+        <div class="group" id="9">
+            <div id="" class="group-container-player round_two one group_1">
+            </div>
+            <div id="" class="group-container-player round_two two group_2">
+            </div>
+        </div>
+        <div class="group" id="10">
+            <div id="" class="group-container-player round_two one group_3">
+            </div>
+            <div id="" class="group-container-player round_two two group_4">
+            </div>
+        </div>
+        <div class="group" id="11">
+            <div id="" class="group-container-player round_two one group_5">
+            </div>
+            <div id="" class="group-container-player round_two two group_6">
+            </div>
+        </div>
+        <div class="group" id="12">
+            <div id="" class="group-container-player round_two one group_7">
+            </div>
+            <div id="" class="group-container-player round_two two group_8">
+            </div>
+        </div>
     </div>
-
-
-
-
-
+    <div class="arrow">
+        <div class="container-arrow three">
+            <div class="group-container-line_top__left three active"></div>
+            <div class="group-container-line_top__right three active"></div>
+            <div class="group-container-line_bottom__right three"></div>
+            <div class="group-container-line_bottom__left three"></div>
+        </div>
+        <div class="container-arrow three">
+            <div class="group-container-line_top__left three"></div>
+            <div class="group-container-line_top__right three"></div>
+            <div class="group-container-line_bottom__right three"></div>
+            <div class="group-container-line_bottom__left three"></div>
+        </div>
+        <div class="container-arrow three">
+            <div class="group-container-line_top__left three"></div>
+            <div class="group-container-line_top__right three"></div>
+            <div class="group-container-line_bottom__right three"></div>
+            <div class="group-container-line_bottom__left three"></div>
+        </div>
+        <div class="container-arrow three">
+            <div class="group-container-line_top__left three"></div>
+            <div class="group-container-line_top__right three"></div>
+            <div class="group-container-line_bottom__right threet"></div>
+            <div class="group-container-line_bottom__left three"></div>
+        </div>
     </div>
-
-    <a  href="tree.html"><button type="submit" value="Play tournament" class="play_button">Play Tournament</button></a>
+    <div class="round three">
+        <div class="group" id="13">
+            <div id="1" class="group-container-player round_three one">
+            </div>
+            <div class="group-container-player round_three two">
+            </div>
+        </div>
+        <div class="group" id="14">
+            <div class="group-container-player round_three one">
+            </div>
+            <div class="group-container-player round_three two">
+            </div>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="container-arrow four">
+            <div class="group-container-line_top__left four active"></div>
+            <div class="group-container-line_top__right four active"></div>
+            <div class="group-container-line_bottom__right four"></div>
+            <div class="group-container-line_bottom__left four"></div>
+        </div>
+        <div class="container-arrow four">
+            <div class="group-container-line_top__left four"></div>
+            <div class="group-container-line_top__right four"></div>
+            <div class="group-container-line_bottom__right four"></div>
+            <div class="group-container-line_bottom__left four"></div>
+        </div>
+    </div>
+    <div class="round four">
+        <div class="group" id="15">
+            <div id="1" class="group-container-player round_four one">
+            </div>
+            <div class="group-container-player round_four two">
+                <input type="text" placeholder="Place a value">
+            </div>
+        </div>
+    </div>
+    <div class="arrow">
+    <div class="container-arrow five">
+        <div class="group-container-line_top__left five active"></div>
+        <div class="group-container-line_top__right five active"></div>
+        <div class="group-container-line_bottom__right five"></div>
+        <div class="group-container-line_bottom__left five"></div>
+    </div>
+    </div>
+    <div class="round five">
+        <div class="group" id="16">
+            <div id="1" class="group-container-player one">
+            </div>
+        </div>
+    </div>
+-->
 </div>
 
-
-<script src="scriptindex.js"></script>
-
-    </body>
-    </html>
+<script src="js/script.js"></script>
+</body>
 </html>
