@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var nb_player = prompt("Please enter the player number (max player : 512)");
 
 
-    if(nb_player <= 2){
-        var nb_container_player = 2, nb_round = 2;
-    }else if (nb_player > 2 && nb_player <= 4){
+    if (nb_player <= 4){
         var nb_container_player = 4, nb_round = 3;
     }else if (nb_player > 4 && nb_player <= 8){
         var nb_container_player = 8, nb_round = 4;
@@ -51,6 +49,34 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
             container.insertAdjacentHTML("beforeend", _round);
         }
 
+        for(k = 1; k<(nb_container_player /2)+1; k++) {
+
+            var group = "<div class=\"group group_id_" + k + "\">" +
+                "</div>";
+
+            var round = document.querySelector(".round");
+            round.insertAdjacentHTML("beforeend", group);
+
+            for (l = 1; l < (nb_container_player + 1); l++) {
+                var user1 = "<div id=\"player_" + l + "\" class=\"group-container-player one round_one group_1\">\n" +
+                    "                <span class=\"username\">username</span>\n" +
+                    "                <button class=\"btn one win group_" + k + "\">Winner</button>\n" +
+                    "                <button class=\"btn more\"><i class=\"fas fa-angle-down\"></i></button>\n" +
+                    "            </div>";
+                l++;
+                var user2 = "<div id=\"player_" + l + "\" class=\"group-container-player two round_one group_1\">\n" +
+                    "                <span class=\"username\">username</span>\n" +
+                    "                <button class=\"btn two win group_" + k + "\">Winner</button>\n" +
+                    "                <button class=\"btn more\"><i class=\"fas fa-angle-down\"></i></button>\n" +
+                    "            </div>\n" +
+                    "        </div>";
+
+                var group_add = document.querySelector(".group_id_"+k+"");
+                group_add.insertAdjacentHTML("beforeend", user1);
+                group_add.insertAdjacentHTML("beforeend", user2);
+            }
+
+        }
     }
 
     function setWin() {
