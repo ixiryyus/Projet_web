@@ -98,6 +98,7 @@ input[type=text]{
     padding: 5px;
     height: 27px;
     border: 2px solid grey;
+    border-radius: 5px;
     margin-bottom: 1.6em;
     transition: 0.3s;
     overflow: hidden;
@@ -121,15 +122,12 @@ input[type=text]{
     transition: 0.3s;
 }
 
-.group-container-player.more{
-    height: 500px;
-}
-
 .btn.win{
     background-color: green;
     color: white;
 }
-.btn.more{
+
+.btn.active{
     background-color: rgba(255,221,0,1);
     color: #3a3a3a;
     margin: 0 5px 0 5px;

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-var nb_player = prompt("Please enter the player number (max player : 512)");
+var nb_player = prompt("Please enter the player number (max player : 64)");
 
 
     if (nb_player <= 4){
@@ -13,73 +13,80 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
         var nb_container_player = 32, nb_round = 6;
     }else if (nb_player > 32 && nb_player <= 64){
         var nb_container_player = 64, nb_round = 7;
-    }else if (nb_player > 64 && nb_player <= 128){
-        var nb_container_player = 128, nb_round = 8;
-    }else if (nb_player > 128 && nb_player <= 256){
-        var nb_container_player = 256, nb_round = 9;
-    }else if (nb_player > 256 && nb_player <= 512){
-        var nb_container_player = 512, nb_round = 10;
     }
 
     create_container();
 
     function create_container() {
 
-        for(i = 0; i < nb_round; i++){
-            var _headerHtml = "<div class=\"header-round\">" + "round " + (i+1) +"</div>\n" +
+        for (i = 0; i < nb_round; i++) {
+            var _headerHtml = "<div class=\"header-round\">" + "round " + (i + 1) + "</div>\n" +
                 "    <div class=\"header-arrow\"></div>";
             var header = document.querySelector(".header");
             header.insertAdjacentHTML("beforeend", _headerHtml);
-            var _round = '<div class="round ' + (i+1) +'"></div>\n' +
+            var _round = '<div id="r_' + (i + 1) + '" class="round ' + (i + 1) + '"></div>\n' +
                 '    <div class="arrow"></div>';
             var container = document.querySelector(".container");
             container.insertAdjacentHTML("beforeend", _round);
+            var nb_group = document.querySelectorAll(".group").length;
         }
 
-        for(j = 1; j<(nb_container_player /2)+1; j++){
+        for (j = 1; j < (nb_container_player / 2) + 1; j++) {
             var arrow_container = "<div class=\"container-arrow\">\n" +
-                "            <div id=\"arrow_"+j+"\" class=\"group-container-line_top__left\"></div>\n" +
-                "            <div id=\"arrow_"+j+"\" class=\"group-container-line_top__right\"></div>\n" +
-                "            <div id=\"arrow_"+j+"\" class=\"group-container-line_bottom__right\"></div>\n" +
-                "            <div id=\"arrow_"+j+"\" class=\"group-container-line_bottom__left\"></div>\n" +
+                "            <div id=\"arrow_" + j + "\" class=\"group-container-line_top__left group_" + j + "\"></div>\n" +
+                "            <div id=\"arrow_" + j + "\" class=\"group-container-line_top__right group_" + j + "\"></div>\n" +
+                "            <div id=\"arrow_" + j + "\" class=\"group-container-line_bottom__right group_" + j + "\"></div>\n" +
+                "            <div id=\"arrow_" + j + "\" class=\"group-container-line_bottom__left group_" + j + "\"></div>\n" +
                 "        </div>";
             var arrow = document.querySelector(".arrow");
             arrow.insertAdjacentHTML("beforeend", arrow_container);
             var container = document.querySelector(".container");
             container.insertAdjacentHTML("beforeend", _round);
         }
+        for (k = 1; k <= (nb_container_player / 2); k++) {
 
-        for(k = 1; k<(nb_container_player /2)+1; k++) {
-
-            var group = "<div class=\"group group_id_" + k + "\">" +
+            var group = "<div id=\"g_" + k + "\" class=\"group group_id_" + k + "\">" +
                 "</div>";
 
             var round = document.querySelector(".round");
             round.insertAdjacentHTML("beforeend", group);
 
-            for (l = 1; l < (nb_container_player + 1); l++) {
-                var user1 = "<div id=\"player_" + l + "\" class=\"group-container-player one round_one group_1\">\n" +
-                    "                <span class=\"username\">username</span>\n" +
-                    "                <button class=\"btn one win group_" + k + "\">Winner</button>\n" +
-                    "                <button class=\"btn more\"><i class=\"fas fa-angle-down\"></i></button>\n" +
-                    "            </div>";
-                l++;
-                var user2 = "<div id=\"player_" + l + "\" class=\"group-container-player two round_one group_1\">\n" +
-                    "                <span class=\"username\">username</span>\n" +
-                    "                <button class=\"btn two win group_" + k + "\">Winner</button>\n" +
-                    "                <button class=\"btn more\"><i class=\"fas fa-angle-down\"></i></button>\n" +
-                    "            </div>\n" +
-                    "        </div>";
+            for(n = 1; n <= (nb_container_player)/4;n++){
+                var next_group = "<div id=\"g_" + n + "\" class=\"group group_id_"+ n +" group_"+ n +"\">" +
+                "</div>";
+                var next_round = document.querySelector("#r_2.round");
+                next_round.insertAdjacentHTML("beforeend", next_group);
+            }
 
-                var group_add = document.querySelector(".group_id_"+k+"");
-                group_add.insertAdjacentHTML("beforeend", user1);
-                group_add.insertAdjacentHTML("beforeend", user2);
+            if (k == (nb_container_player / 2)) {
+                for (l = 1; l < 2; l++) {
+                    for (m = 1; m <= (nb_container_player / 2); m++) {
+                        var user1 = "<div id=\"player_" + l + "\" class=\"group-container-player one round_one group_" + m + "\">\n" +
+                            "                <span class=\"username\">username</span>\n" +
+                            "                <button class=\"btn one win group_" + m + "\">Winner</button>\n" +
+                            "                <button class=\"btn active\"><i class=\"fas fa-angle-double-right\"></i></button>\n" +
+                            "            </div>";
+                        l++;
+                        var user2 = "<div id=\"player_" + l + "\" class=\"group-container-player two round_one group_" + m + "\">\n" +
+                            "                <span class=\"username\">username</span>\n" +
+                            "                <button class=\"btn two win group_" + m + "\">Winner</button>\n" +
+                            "                <button class=\"btn active\"><i class=\"fas fa-angle-double-right\"></i></button>\n" +
+                            "            </div>\n" +
+                            "        </div>";
+
+                        var group_add = document.querySelector(".group_id_" + m + "");
+                        group_add.insertAdjacentHTML("beforeend", user1);
+                        group_add.insertAdjacentHTML("beforeend", user2);
+                    }
+                }
             }
 
         }
+
     }
 
-    function setWin() {
+    function setWin(e) {
+        e.preventDefault();
         this.parentNode.classList.add("win");
 
         var id_group = this.parentNode.parentNode.getAttribute('id'),
@@ -91,12 +98,19 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
             var player_select = document.querySelector('.group-container-player.two.group_' + id_group);
             player_select.classList.add("loose");
 
-            var player_id_two = player_select.getAttribute('id');
+            var player_id_two = player_select.getAttribute('id'),
+                id_winner = this.parentNode.getAttribute("id"),
+                container_winner = document.querySelector("#"+ id_winner +"");
 
             var btn_delete_two = document.querySelector('.btn.two.win.group_' + id_group);
             btn_delete_two.remove();
 
-            for (var i = 0; i <= arrow_select.length; i++) {
+            var round = this.parentNode.parentNode.parentNode,
+            group_next_round = round.getAttribute("id");
+            var next_round = document.querySelectorAll("#round_"+ group_next_round +".round");
+            next_round.insertAdjacentHTML("beforeend", container_winner.innerHTML);
+
+            for (var i = 0; i < arrow_select.length; i++) {
                 if (arrow_select[i].classList.contains("group-container-line_top__left") || arrow_select[i].classList.contains("group-container-line_top__right")) {
                     arrow_select[i].classList.add("win");
                     arrow_select[i].classList.add(player_id);
@@ -106,6 +120,7 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
                     arrow_select[i].classList.add(player_id_two);
                 }
             }
+
         } else {
 
             var player_select_two = document.querySelector('.group-container-player.one.group_' + id_group);
@@ -115,7 +130,7 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
             var btn_delete_one = document.querySelector('.btn.one.win.group_' + id_group);
             btn_delete_one.remove();
 
-            for (var i = 0; i <= arrow_select.length; i++) {
+            for (var i = 0; i < arrow_select.length; i++) {
                 if (arrow_select[i].classList.contains("group-container-line_bottom__left") || arrow_select[i].classList.contains("group-container-line_bottom__right")) {
                     arrow_select[i].classList.add("win");
                     arrow_select[i].classList.add(player_id);
@@ -126,22 +141,11 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
                 }
             }
         }
-    }
 
-    function moreInfos() {
-        this.parentNode.classList.toggle("more");
-        var _html = this.innerHTML, content = '<i class="fas fa-angle-up"></i>';
-        if(_html === content){
-            _html = '<i class="fas fa-angle-down"></i>';
-            console.log(_html);
-        }else{
-            _html = '<i class="fas fa-angle-up"></i>';
-            console.log(_html);
-        }
     }
 
     function setActive() {
-        this.classList.toggle("active");
+        this.parentNode.classList.toggle("active");
     }
 
     var btn_click = document.querySelectorAll(".win");
@@ -149,14 +153,9 @@ var nb_player = prompt("Please enter the player number (max player : 512)");
         btn.addEventListener("click",setWin)
     });
 
-    var active = document.querySelectorAll(".group-container-player");
+    var active = document.querySelectorAll(".btn.active");
     active.forEach(function(btn){
         btn.addEventListener("click",setActive)
-    });
-
-    var btn_infos = document.querySelectorAll(".more");
-    btn_infos.forEach(function(btn){
-        btn.addEventListener("click",moreInfos)
     });
 
 });
