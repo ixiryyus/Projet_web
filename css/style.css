@@ -20,11 +20,11 @@ html, body{
 }
 
 input[type=text]{
-    width: 90%;
     background-color: transparent;
     color: white;
     border: none !important;
-    padding: 1em;
+    padding: 0.5em;
+    width: 10em;
 }
 
 .container{
@@ -153,8 +153,8 @@ input[type=text]{
 }
 
 .round_two.two{
-    margin-bottom: 55px;
-    margin-top: -40px;
+    margin-bottom: 57px;
+    margin-top: -39px;
 }
 
 .round_three.one{
