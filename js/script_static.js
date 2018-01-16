@@ -15,12 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 id_winner = this.parentNode.getAttribute("data-player-id"),
                 id_round = this.parentNode.getAttribute("data-round-id"),
                 idNewRound = Number(id_round)+1,
+                idNewGroup = Number(id_group)+1,
                 new_container_next_round = document.querySelector('.group-container-player[data-lastgroup-id="'+ id_group+'"][data-round-id="'+ idNewRound +'"]'),
-                username = document.querySelector("input[data-player-id='"+ id_winner +"'][data-group-id='"+ id_group +"'][data-round-id='1']").value,
-                add_user = "<span class=\"username\" data-player-id='"+ id_winner +"' data-group-id='"+ id_group +"' data-round-id='"+ idNewRound +"'>"+ username +"</span>" +
-                    "<button class=\"btn one win group_1\">Winner</button>\n" +
+                username = document.querySelector("[data-name=\"username\"][data-player-id='"+ id_winner +"'][data-group-id='"+ id_group +"'][data-round-id='"+ id_round +"']").value,
+                add_user = "<span class=\"username\" data-name=\"username\" data-player-id='"+ id_winner +"' data-group-id='"+ id_group +"' data-round-id='"+ idNewRound +"'>"+ username +"</span>" +
+                    "<button class=\"btn one win group_1\" data-player-id='"+ id_winner +"' data-btn-ftn=\"win\" data-group-id='"+ id_group +"' data-round-id='"+ idNewRound +">Winner</button>\n" +
                     "                <button class=\"btn active\" alt='Follow the player' title='Follow the player'><i class=\"fas fa-angle-double-right\"></i></button>";
 
+            add_user.lastElementChild.querySelector("[data-player-id='"+ id_winner +"'][data-group-id='"+ id_group +"'][data-round-id='"+ id_round +"'][data-btn-ftn='win']").addEventListener("click",setActive);
             player_select.classList.add("loose");
             new_container_next_round.setAttribute("data-player-id", id_winner);
             new_container_next_round.insertAdjacentHTML("beforeend", add_user);
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.parentNode.classList.toggle("active");
     }
 
-    var btn_click = document.querySelectorAll(".win");
+    var btn_click = document.querySelectorAll(".btn.win");
     btn_click.forEach(function(btn){
         btn.addEventListener("click",setWin)
     });
