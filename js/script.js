@@ -75,7 +75,7 @@ var nb_player = prompt("Please enter the player number (max player : 32)");
                 next_round.insertAdjacentHTML("beforeend", group_two);
 
             if (n == (nb_container_player / 4)) {
-                for (o = 1; o <= (nb_container_player / 2); o++) {
+                for (o = 1; o < (nb_container_player / 2); o++) {
                     var user1_two = "<div id=\"\" class=\"group-container-player one round_two group_" + o + "\">\n" +
                         "                <span class=\"username\">_____</span>\n" +
                         "                <button class=\"btn one win group_" + o + "\">Winner</button>\n" +
@@ -113,7 +113,7 @@ var nb_player = prompt("Please enter the player number (max player : 32)");
                         "                <button class=\"btn active\"><i class=\"fas fa-angle-double-right\"></i></button>\n" +
                         "            </div>\n" +
                         "        </div>";
-
+                    console.log(".group.group_round_two_" + q)
                     var group_add_three = document.querySelector(".group.group_round_two_" + q + "");
                     group_add_three.insertAdjacentHTML("beforeend", user1_three);
                     group_add_three.insertAdjacentHTML("beforeend", user2_three);
@@ -127,13 +127,14 @@ var nb_player = prompt("Please enter the player number (max player : 32)");
         e.preventDefault();
         this.parentNode.classList.add("win");
 
-        var id_group = this.parentNode.parentNode.getAttribute('id'),
+        var id_group = this.parentNode.parentNode.getAttribute('data-id'),
             player_id = this.parentNode.getAttribute('id'),
             arrow_select = document.querySelectorAll('#arrow_' + id_group);
 
         if (this.parentNode.classList.contains("one")) {
 
             var player_select = document.querySelector('.group-container-player.two.group_' + id_group);
+            console.log('.group-container-player.two#' + id_group);
             player_select.classList.add("loose");
 
             var player_id_two = player_select.getAttribute('id'),
