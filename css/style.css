@@ -182,6 +182,7 @@ input[type=text]{
 
 .group-container-line_bottom__left.active, .group-container-line_bottom__right.active, .group-container-line_top__right.active, .group-container-line_top__left.active{
     border: 2px solid rgba(255,221,0,1);
+    transition: 1s;
 }
 
 .group-container-line_bottom__left.win, .group-container-line_bottom__right.win, .group-container-line_top__right.win, .group-container-line_top__left.win{
